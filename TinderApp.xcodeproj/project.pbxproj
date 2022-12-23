@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69DAE8976DC30752BB5A7A43 /* Pods_TinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAE78E2E74116F99D8AD18A /* Pods_TinderApp.framework */; };
+		AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE832954F46B00D6BE86 /* RegistrationController.swift */; };
+		AB64BE862954FAD600D6BE86 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE852954FAD600D6BE86 /* CustomTextField.swift */; };
 		AB68CC962953236800AE188B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC952953236800AE188B /* AppDelegate.swift */; };
 		AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC972953236800AE188B /* SceneDelegate.swift */; };
 		AB68CC9A2953236800AE188B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC992953236800AE188B /* HomeController.swift */; };
@@ -20,9 +23,17 @@
 		AB68CCB629535D9700AE188B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB529535D9700AE188B /* User.swift */; };
 		AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB9295367BB00AE188B /* CardViewModel.swift */; };
 		AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCBB2953716500AE188B /* Advertiser.swift */; };
+		AB8E70022955E38B0052BEA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */; };
+		ABE24B122955F64C0079D7CC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE24B112955F64C0079D7CC /* Bindable.swift */; };
+		ABE24B14295664540079D7CC /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE24B13295664540079D7CC /* SettingController.swift */; };
+		ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BAE78E2E74116F99D8AD18A /* Pods_TinderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3E9108A5D38A6C1F4F8EDE /* Pods-TinderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderApp.release.xcconfig"; path = "Target Support Files/Pods-TinderApp/Pods-TinderApp.release.xcconfig"; sourceTree = "<group>"; };
+		AB64BE832954F46B00D6BE86 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		AB64BE852954FAD600D6BE86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AB68CC922953236800AE188B /* TinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB68CC952953236800AE188B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB68CC972953236800AE188B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +49,11 @@
 		AB68CCB529535D9700AE188B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB68CCB9295367BB00AE188B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		AB68CCBB2953716500AE188B /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABE24B112955F64C0079D7CC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		ABE24B13295664540079D7CC /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E2560BF847434B8583BAA38D /* Pods-TinderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderApp.debug.xcconfig"; path = "Target Support Files/Pods-TinderApp/Pods-TinderApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DAE8976DC30752BB5A7A43 /* Pods_TinderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47E63246D05DFEA4DF837B3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2560BF847434B8583BAA38D /* Pods-TinderApp.debug.xcconfig */,
+				8A3E9108A5D38A6C1F4F8EDE /* Pods-TinderApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AB68CC892953236800AE188B = {
 			isa = PBXGroup;
 			children = (
 				AB68CC942953236800AE188B /* TinderApp */,
 				AB68CC932953236800AE188B /* Products */,
+				47E63246D05DFEA4DF837B3D /* Pods */,
+				E7DA7B9CD77E544EF0F1C88A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +106,7 @@
 				AB68CC952953236800AE188B /* AppDelegate.swift */,
 				AB68CC972953236800AE188B /* SceneDelegate.swift */,
 				AB68CC9B2953236800AE188B /* Main.storyboard */,
+				AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */,
 				AB68CC9E2953236900AE188B /* Assets.xcassets */,
 				AB68CCA02953236900AE188B /* LaunchScreen.storyboard */,
 				AB68CCA32953236900AE188B /* Info.plist */,
@@ -99,6 +128,7 @@
 				AB68CCB02953334400AE188B /* TopNavigationStackView.swift */,
 				AB68CCAE29532ED200AE188B /* HomeBottomControlsStackView.swift */,
 				AB68CCB229533B2D00AE188B /* CardView.swift */,
+				AB64BE852954FAD600D6BE86 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				AB68CC992953236800AE188B /* HomeController.swift */,
+				AB64BE832954F46B00D6BE86 /* RegistrationController.swift */,
+				ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */,
+				ABE24B112955F64C0079D7CC /* Bindable.swift */,
+				ABE24B13295664540079D7CC /* SettingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +162,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		E7DA7B9CD77E544EF0F1C88A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE78E2E74116F99D8AD18A /* Pods_TinderApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB68CCA62953236900AE188B /* Build configuration list for PBXNativeTarget "TinderApp" */;
 			buildPhases = (
+				1DFDE622A85D09C7F931C5F7 /* [CP] Check Pods Manifest.lock */,
 				AB68CC8E2953236800AE188B /* Sources */,
 				AB68CC8F2953236800AE188B /* Frameworks */,
 				AB68CC902953236800AE188B /* Resources */,
+				46CE2C43138F335C0AE80B14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,23 +233,71 @@
 				AB68CCA22953236900AE188B /* LaunchScreen.storyboard in Resources */,
 				AB68CC9F2953236900AE188B /* Assets.xcassets in Resources */,
 				AB68CC9D2953236800AE188B /* Main.storyboard in Resources */,
+				AB8E70022955E38B0052BEA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DFDE622A85D09C7F931C5F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46CE2C43138F335C0AE80B14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderApp/Pods-TinderApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderApp/Pods-TinderApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderApp/Pods-TinderApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB68CC8E2953236800AE188B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE24B14295664540079D7CC /* SettingController.swift in Sources */,
 				AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */,
 				AB68CCB329533B2D00AE188B /* CardView.swift in Sources */,
 				AB68CC9A2953236800AE188B /* HomeController.swift in Sources */,
 				AB68CC962953236800AE188B /* AppDelegate.swift in Sources */,
 				AB68CCAF29532ED200AE188B /* HomeBottomControlsStackView.swift in Sources */,
 				AB68CCB629535D9700AE188B /* User.swift in Sources */,
+				AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */,
 				AB68CCB12953334400AE188B /* TopNavigationStackView.swift in Sources */,
+				ABE24B122955F64C0079D7CC /* Bindable.swift in Sources */,
+				AB64BE862954FAD600D6BE86 /* CustomTextField.swift in Sources */,
+				ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */,
 				AB68CCAC2953260B00AE188B /* Extensions+UIView.swift in Sources */,
 				AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */,
 				AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */,
@@ -341,6 +433,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -350,6 +443,7 @@
 		};
 		AB68CCA72953236900AE188B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2560BF847434B8583BAA38D /* Pods-TinderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -368,7 +462,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AK.TinderApp;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AK.SwipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -378,6 +473,7 @@
 		};
 		AB68CCA82953236900AE188B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A3E9108A5D38A6C1F4F8EDE /* Pods-TinderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -396,7 +492,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AK.TinderApp;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AK.SwipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
