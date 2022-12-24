@@ -8,8 +8,13 @@
 import UIKit
 import SDWebImage
 
+protocol CardViewDelegate {
+    func didTapMoreInfo()
+}
+
 class CardView: UIView {
     
+    var delegate: CardViewDelegate?
     
     var cardViewModel: CardViewModel! {
         didSet {
@@ -55,9 +60,7 @@ class CardView: UIView {
     
     // Configurations
    fileprivate let threshold: CGFloat = 80
-    
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -81,6 +84,19 @@ class CardView: UIView {
        }
     }
     
+    fileprivate lazy var moreInfoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "info_icon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleMoreInfo), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc fileprivate func handleMoreInfo() {
+        // use delegate instead, much more delegate
+        delegate?.didTapMoreInfo()
+        
+    }
+    
     fileprivate func setupLayout() {
         //custom drawing code
         layer.cornerRadius = 10
@@ -98,6 +114,8 @@ class CardView: UIView {
         
         informationLabel.textColor = .white
         informationLabel.numberOfLines = 0
+        addSubview(moreInfoButton)
+        moreInfoButton.anchor(top: nil, leading: nil, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 16, right: 16), size: .init(width: 44, height: 44))
     }
     
     fileprivate let barsStackView = UIStackView()

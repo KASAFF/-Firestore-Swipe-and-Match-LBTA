@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
+import SDWebImage
+
+protocol SettingsControllerDelegate {
+    func didSaveSettings()
+}
 
 class CustomImagePickerController: UIImagePickerController {
     var imageButton: UIButton?
@@ -13,26 +20,64 @@ class CustomImagePickerController: UIImagePickerController {
 
 class SettingController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var delegate: SettingsControllerDelegate?
+    
     //instance properties
     lazy var image1Button = createButton(selector: #selector(handleSelectPhoto))
     lazy var image2Button = createButton(selector: #selector(handleSelectPhoto))
     lazy var image3Button = createButton(selector: #selector(handleSelectPhoto))
     
+    let imagePicker = CustomImagePickerController()
+    
     @objc func handleSelectPhoto(button: UIButton) {
         print("Select photo with button:", button)
-        let imagePicker = CustomImagePickerController()
         imagePicker.delegate = self
         imagePicker.imageButton = button
-        present(imagePicker, animated: true)
+        DispatchQueue.main.async {
+            self.present(self.imagePicker, animated: true)
+        }
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[.originalImage] as? UIImage
         //how do i set the image on my button when i select a photo?
         let imageButton = (picker as? CustomImagePickerController)?.imageButton
         imageButton?.setImage(selectedImage?.withRenderingMode(.alwaysOriginal), for: .normal)
-        
         dismiss(animated: true)
+        
+        let fileName = UUID().uuidString
+        let ref = Storage.storage().reference(withPath: "/images/\(fileName)")
+        guard let uploadData = selectedImage?.jpegData(compressionQuality: 0.75) else { return }
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Uploading image..."
+        hud.show(in: view)
+        ref.putData(uploadData, metadata: nil) { _, err in
+            if let err = err {
+                hud.dismiss()
+                print("Failed to upload image to storage", err)
+                return
+            }
+            
+            print("Finished uploading image")
+            ref.downloadURL { url, err in
+                hud.dismiss()
+                if let err = err {
+                    print("Failed to retrieve download URL:", err)
+                    return
+                }
+                print("Finished getting download url:", url?.absoluteString ?? "")
+                if imageButton == self.image1Button {
+                    self.user?.imageUrl1 = url?.absoluteString
+                } else if imageButton == self.image2Button {
+                    self.user?.imageUrl2 = url?.absoluteString
+                } else {
+                    self.user?.imageUrl3 = url?.absoluteString
+                }
+            }
+            
+        }
     }
     
     func createButton(selector: Selector) -> UIButton {
@@ -52,12 +97,48 @@ class SettingController: UITableViewController, UIImagePickerControllerDelegate,
         setupNavigationItems()
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .interactive
+        fetchCurrentUser()
         
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+    
+    
+    var user: User?
+    
+    fileprivate func fetchCurrentUser() {
+        Firestore.firestore().fetchCurrentUser { (user, err) in
+            if let err = err {
+                print("Failed to fetch user:", err)
+                return
+            }
+            self.user = user
+            self.loadUserPhotos()
+            self.tableView.reloadData()
+        }
+    }
+
+     func loadUserPhotos() {
+        if let imageUrl = user?.imageUrl1, let url = URL(string: imageUrl) {
+            SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { image, _, _, _, _, _ in
+                self.image1Button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
+        }
+        if let imageUrl = user?.imageUrl2, let url = URL(string: imageUrl) {
+            SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { image, _, _, _, _, _ in
+                self.image2Button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
+        }
+        if let imageUrl = user?.imageUrl3, let url = URL(string: imageUrl) {
+            SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { image, _, _, _, _, _ in
+                self.image3Button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
+        }
+    }
+    
+    lazy var header: UIView = {
         let header = UIView()
-        
         header.addSubview(image1Button)
         let padding: CGFloat = 16
         
@@ -72,12 +153,126 @@ class SettingController: UITableViewController, UIImagePickerControllerDelegate,
         stackView.spacing = padding
         header.addSubview(stackView)
         stackView.anchor(top: header.topAnchor, leading: image1Button.trailingAnchor, bottom: header.bottomAnchor, trailing: header.trailingAnchor, padding: .init(top: padding, left: padding, bottom: padding, right: padding))
-        
         return header
+    }()
+    
+    class HeaderLabel: UILabel {
+        override func drawText(in rect: CGRect) {
+            super.drawText(in: rect.insetBy(dx: 16, dy: 0))
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return header
+        }
+        let headerLabel = HeaderLabel()
+        switch section {
+        case 1:
+            headerLabel.text = "Name"
+        case 2:
+            headerLabel.text = "Profession"
+        case 3:
+            headerLabel.text = "Age"
+        case 4:
+            headerLabel.text = "Bio"
+        default:
+            headerLabel.text = "Seeking Age Range"
+        }
+        headerLabel.font = .boldSystemFont(ofSize: 16)
+        return headerLabel
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        300
+        if section == 0 {
+            return 300
+        } else {
+           return 40
+        }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        6
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? 0 : 1 // if section 0 return 0
+    }
+    
+    @objc fileprivate func handleMinAgeChange(slider: UISlider) {
+        // i want to update the minLabel in my AgeRangeCell
+        
+        let indexPath = IndexPath(row: 0, section: 5)
+        let ageRangeCell = tableView.cellForRow(at: indexPath) as! AgeRangeCell
+        if slider.value >= ageRangeCell.maxSlider.value {
+            ageRangeCell.maxSlider.value = slider.value
+            ageRangeCell.maxLabel.text = "Max: \(Int((slider.value)))"
+            self.user?.maxSeekingAge = Int(slider.value)
+        }
+        ageRangeCell.minLabel.text = "Min: \(Int((slider.value)))"
+        
+        self.user?.minSeekingAge = Int(slider.value)
+    }
+   @objc fileprivate func handleMaxAgeChange(slider: UISlider) {
+       let indexPath = IndexPath(row: 0, section: 5)
+       let ageRangeCell = tableView.cellForRow(at: indexPath) as! AgeRangeCell
+       let minSliderValue = ageRangeCell.minSlider.value
+       if slider.value <= minSliderValue {
+           ageRangeCell.maxSlider.value = minSliderValue
+
+       }
+       ageRangeCell.maxLabel.text = "Max: \(Int((slider.value)))"
+       
+       self.user?.maxSeekingAge = Int(slider.value)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //age range cell
+        if indexPath.section == 5 {
+            let ageRangeCell = AgeRangeCell(style: .default, reuseIdentifier: nil)
+            ageRangeCell.minSlider.addTarget(self, action: #selector(handleMinAgeChange), for: .valueChanged)
+            ageRangeCell.maxSlider.addTarget(self, action: #selector(handleMaxAgeChange), for: .valueChanged)
+            // we need to set up the labels on our cell here
+            ageRangeCell.minLabel.text = "Min: \(user?.minSeekingAge ?? -1)"
+            ageRangeCell.minSlider.value = Float(user?.minSeekingAge ?? Int(ageRangeCell.minSlider.minimumValue))
+            ageRangeCell.maxLabel.text = "Max: \(user?.maxSeekingAge ?? -1)"
+            ageRangeCell.maxSlider.value = Float(user?.maxSeekingAge ?? Int(ageRangeCell.maxSlider.maximumValue))
+            
+            return ageRangeCell
+        }
+        
+        let cell = SettingsCell(style: .default, reuseIdentifier: nil)
+        
+        switch indexPath.section {
+        case 1:
+            cell.textField.placeholder = "Enter Name"
+            cell.textField.text = user?.name
+            cell.textField.addTarget(self, action: #selector(handleNameChange), for: .editingChanged)
+        case 2:
+            cell.textField.placeholder = "Enter Profession"
+            cell.textField.text = user?.profession
+            cell.textField.addTarget(self, action: #selector(handleProfessionChange), for: .editingChanged)
+        case 3:
+            cell.textField.placeholder = "Enter Age"
+            cell.textField.addTarget(self, action: #selector(handleAgeChange), for: .editingChanged)
+            if let age = user?.age {
+                cell.textField.text = String(age)
+            }
+        default:
+            cell.textField.placeholder = "Enter Bio"
+        }
+        
+        return cell
+    }
+    
+    @objc fileprivate func handleNameChange(textField: UITextField) {
+        self.user?.name = textField.text
+    }
+    @objc fileprivate func handleProfessionChange(textField: UITextField) {
+        self.user?.profession = textField.text
+    }
+    @objc fileprivate func handleAgeChange(textField: UITextField) {
+        self.user?.age = Int(textField.text ?? "")
     }
     
     fileprivate func setupNavigationItems() {
@@ -85,10 +280,47 @@ class SettingController: UITableViewController, UIImagePickerControllerDelegate,
         navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.leftBarButtonItems = [UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))]
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleCancel)),
-                                              UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleCancel))]
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave)),
+                                              UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))]
     }
 
+    @objc fileprivate func handleLogout() {
+        try? Auth.auth().signOut()
+        dismiss(animated: true) {
+            
+        }
+    }
+    
+    @objc fileprivate func handleSave() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let docData: [String : Any] = [
+            "uid": uid,
+            "fullName": user?.name ?? "",
+            "imageUrl1": user?.imageUrl1 ?? "",
+            "imageUrl2": user?.imageUrl2 ?? "",
+            "imageUrl3": user?.imageUrl3 ?? "",
+            "age": user?.age ?? -1,
+            "profession": user?.profession ?? "",
+            "minSeekingAge": user?.minSeekingAge ?? -1,
+            "maxSeekingAge": user?.maxSeekingAge ?? -1
+        ]
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Saving settings"
+        hud.show(in: view)
+        Firestore.firestore().collection("users").document(uid).setData(docData) { err in
+            hud.dismiss()
+            if let err = err {
+                print("Failed to save user settings:", err)
+                return
+            }
+            print("Finished saving user info")
+            self.dismiss(animated: true) {
+                self.delegate?.didSaveSettings()
+                // i want to refetch my cards inside of homeController somehow
+            }
+        }
+    }
+    
     @objc fileprivate func handleCancel() {
         dismiss(animated: true)
     }

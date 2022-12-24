@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69DAE8976DC30752BB5A7A43 /* Pods_TinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAE78E2E74116F99D8AD18A /* Pods_TinderApp.framework */; };
+		AB565DDF2957073A002668CA /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB565DDE2957073A002668CA /* SettingsCell.swift */; };
 		AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE832954F46B00D6BE86 /* RegistrationController.swift */; };
 		AB64BE862954FAD600D6BE86 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE852954FAD600D6BE86 /* CustomTextField.swift */; };
 		AB68CC962953236800AE188B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC952953236800AE188B /* AppDelegate.swift */; };
@@ -24,6 +25,11 @@
 		AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB9295367BB00AE188B /* CardViewModel.swift */; };
 		AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCBB2953716500AE188B /* Advertiser.swift */; };
 		AB8E70022955E38B0052BEA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */; };
+		ABC1E9EE295735E4009CCEE2 /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */; };
+		ABC1E9F029575ABE009CCEE2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */; };
+		ABC1E9F4295782A7009CCEE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9F2295782A6009CCEE2 /* LoginController.swift */; };
+		ABC1E9F5295782A7009CCEE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9F3295782A7009CCEE2 /* LoginViewModel.swift */; };
+		ABC1E9F829579A08009CCEE2 /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9F729579A08009CCEE2 /* UserDetailsController.swift */; };
 		ABE24B122955F64C0079D7CC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE24B112955F64C0079D7CC /* Bindable.swift */; };
 		ABE24B14295664540079D7CC /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE24B13295664540079D7CC /* SettingController.swift */; };
 		ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */; };
@@ -32,6 +38,7 @@
 /* Begin PBXFileReference section */
 		3BAE78E2E74116F99D8AD18A /* Pods_TinderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3E9108A5D38A6C1F4F8EDE /* Pods-TinderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderApp.release.xcconfig"; path = "Target Support Files/Pods-TinderApp/Pods-TinderApp.release.xcconfig"; sourceTree = "<group>"; };
+		AB565DDE2957073A002668CA /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		AB64BE832954F46B00D6BE86 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AB64BE852954FAD600D6BE86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AB68CC922953236800AE188B /* TinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +57,11 @@
 		AB68CCB9295367BB00AE188B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		AB68CCBB2953716500AE188B /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
 		AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
+		ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
+		ABC1E9F2295782A6009CCEE2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		ABC1E9F3295782A7009CCEE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ABC1E9F729579A08009CCEE2 /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
 		ABE24B112955F64C0079D7CC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		ABE24B13295664540079D7CC /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AB68CCAB2953260B00AE188B /* Extensions+UIView.swift */,
+				ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -129,6 +142,8 @@
 				AB68CCAE29532ED200AE188B /* HomeBottomControlsStackView.swift */,
 				AB68CCB229533B2D00AE188B /* CardView.swift */,
 				AB64BE852954FAD600D6BE86 /* CustomTextField.swift */,
+				AB565DDE2957073A002668CA /* SettingsCell.swift */,
+				ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +160,8 @@
 		AB68CCB72953671600AE188B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ABC1E9F6295799D9009CCEE2 /* User Details */,
+				ABC1E9F129578241009CCEE2 /* Login */,
 				AB68CC992953236800AE188B /* HomeController.swift */,
 				AB64BE832954F46B00D6BE86 /* RegistrationController.swift */,
 				ABF939FF2955CA4E009D8BED /* RegistrationViewModel.swift */,
@@ -160,6 +177,23 @@
 				AB68CCB9295367BB00AE188B /* CardViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ABC1E9F129578241009CCEE2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ABC1E9F2295782A6009CCEE2 /* LoginController.swift */,
+				ABC1E9F3295782A7009CCEE2 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ABC1E9F6295799D9009CCEE2 /* User Details */ = {
+			isa = PBXGroup;
+			children = (
+				ABC1E9F729579A08009CCEE2 /* UserDetailsController.swift */,
+			);
+			path = "User Details";
 			sourceTree = "<group>";
 		};
 		E7DA7B9CD77E544EF0F1C88A /* Frameworks */ = {
@@ -286,11 +320,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC1E9F4295782A7009CCEE2 /* LoginController.swift in Sources */,
+				ABC1E9F029575ABE009CCEE2 /* Firebase+Utils.swift in Sources */,
 				ABE24B14295664540079D7CC /* SettingController.swift in Sources */,
 				AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */,
 				AB68CCB329533B2D00AE188B /* CardView.swift in Sources */,
 				AB68CC9A2953236800AE188B /* HomeController.swift in Sources */,
 				AB68CC962953236800AE188B /* AppDelegate.swift in Sources */,
+				ABC1E9F829579A08009CCEE2 /* UserDetailsController.swift in Sources */,
+				ABC1E9EE295735E4009CCEE2 /* AgeRangeCell.swift in Sources */,
+				ABC1E9F5295782A7009CCEE2 /* LoginViewModel.swift in Sources */,
 				AB68CCAF29532ED200AE188B /* HomeBottomControlsStackView.swift in Sources */,
 				AB68CCB629535D9700AE188B /* User.swift in Sources */,
 				AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */,
@@ -300,6 +339,7 @@
 				ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */,
 				AB68CCAC2953260B00AE188B /* Extensions+UIView.swift in Sources */,
 				AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */,
+				AB565DDF2957073A002668CA /* SettingsCell.swift in Sources */,
 				AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +551,7 @@
 				AB68CCA52953236900AE188B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		AB68CCA62953236900AE188B /* Build configuration list for PBXNativeTarget "TinderApp" */ = {
 			isa = XCConfigurationList;
@@ -520,7 +560,7 @@
 				AB68CCA82953236900AE188B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
