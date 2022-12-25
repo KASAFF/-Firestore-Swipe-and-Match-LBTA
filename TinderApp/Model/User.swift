@@ -16,13 +16,12 @@ struct User: ProducesCardViewModel {
     var imageUrl2: String?
     var imageUrl3: String?
     var uid: String?
-    
-    var minSeekingAge: Int?
-    var maxSeekingAge: Int?
 
-    
+    var minSeekingAge: Int? = 18
+    var maxSeekingAge: Int? = 100
+
     init(dictionary: [String: Any]) {
-        //we'll initialize our user here
+        // we'll initialize our user here
         self.age = dictionary["age"] as? Int
         self.profession = dictionary["profession"] as? String
         self.name = dictionary["fullName"] as? String
@@ -32,28 +31,26 @@ struct User: ProducesCardViewModel {
         self.uid = dictionary["uid"] as? String
         self.minSeekingAge = dictionary["minSeekingAge"] as? Int
         self.maxSeekingAge = dictionary["maxSeekingAge"] as? Int
-        
+
     }
-    
+
     func toCardViewModel() -> CardViewModel {
         let attributedText = NSMutableAttributedString(string: name ?? "", attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-        
+
         let ageString = age != nil ? "\(age!)" : "N\\A"
-        
+
         attributedText.append(NSAttributedString(string: "  \(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-        
+
         let professionString = profession != nil ? profession! : "Not available"
-        
+
         attributedText.append(NSAttributedString(string: "\n\(professionString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-        
+
         var imageUrls = [String]()
         if let url = imageUrl1 { imageUrls.append(url)}
         if let url = imageUrl2 { imageUrls.append(url)}
         if let url = imageUrl3 { imageUrls.append(url)}
-        
-        
-        return CardViewModel(imageNames: imageUrls, attributedString: attributedText, textAlignment: .left)
-    }
-    
-}
 
+        return CardViewModel(uid: self.uid ?? "", imageNames: imageUrls, attributedString: attributedText, textAlignment: .left)
+    }
+
+}

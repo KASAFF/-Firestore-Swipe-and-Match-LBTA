@@ -9,40 +9,40 @@
 import UIKit
 import JGProgressHUD
 
-protocol LoginControllerDelegate {
+protocol LoginControllerDelegate: AnyObject {
     func didFinishLoggingIn()
 }
 
 class LoginController: UIViewController {
-    
+
     var delegate: LoginControllerDelegate?
-    
+
     lazy var emailTextField: CustomTextField = {
-        let tf = CustomTextField(padding: 24, height: 50)
-        tf.placeholder = "Enter email"
-        tf.keyboardType = .emailAddress
-        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
-        return tf
+        let textfield = CustomTextField(padding: 24, height: 50)
+        textfield.placeholder = "Enter email"
+        textfield.keyboardType = .emailAddress
+        textfield.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        return textfield
     }()
     lazy var passwordTextField: CustomTextField = {
-        let tf = CustomTextField(padding: 24, height: 50)
-        tf.placeholder = "Enter password"
-        tf.isSecureTextEntry = true
-        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
-        return tf
+        let textfield = CustomTextField(padding: 24, height: 50)
+        textfield.placeholder = "Enter password"
+        textfield.isSecureTextEntry = true
+        textfield.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        return textfield
     }()
-    
+
     lazy var verticalStackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [
+        let stackView = UIStackView(arrangedSubviews: [
             emailTextField,
             passwordTextField,
             loginButton
-            ])
-        sv.axis = .vertical
-        sv.spacing = 8
-        return sv
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
     }()
-    
+
     @objc fileprivate func handleTextChange(textField: UITextField) {
         if textField == emailTextField {
             loginViewModel.email = textField.text
@@ -50,7 +50,7 @@ class LoginController: UIViewController {
             loginViewModel.password = textField.text
         }
     }
-    
+
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
@@ -64,7 +64,7 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
-    
+
     @objc fileprivate func handleLogin() {
         loginViewModel.performLogin { (err) in
             self.loginHUD.dismiss()
@@ -72,14 +72,14 @@ class LoginController: UIViewController {
                 print("Failed to log in:", err)
                 return
             }
-            
+
             print("Logged in successfully")
             self.dismiss(animated: true) {
                 self.delegate?.didFinishLoggingIn()
             }
         }
     }
-    
+
     fileprivate lazy var backToRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Go back", for: .normal)
@@ -88,23 +88,23 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         return button
     }()
-    
+
     @objc fileprivate func handleBack() {
         navigationController?.popViewController(animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupGradientLayer()
         setupLayout()
-        
+
         setupBindables()
     }
-    
+
     fileprivate let loginViewModel = LoginViewModel()
     fileprivate let loginHUD = JGProgressHUD(style: .dark)
-    
+
     fileprivate func setupBindables() {
         loginViewModel.isFormValid.bind { [unowned self] (isFormValid) in
             guard let isFormValid = isFormValid else { return }
@@ -121,14 +121,14 @@ class LoginController: UIViewController {
             }
         }
     }
-    
+
     let gradientLayer = CAGradientLayer()
-    
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         gradientLayer.frame = view.bounds
     }
-    
+
     fileprivate func setupGradientLayer() {
         let topColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
         let bottomColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
@@ -138,13 +138,13 @@ class LoginController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         gradientLayer.frame = view.bounds
     }
-    
+
     fileprivate func setupLayout() {
         navigationController?.isNavigationBarHidden = true
         view.addSubview(verticalStackView)
         verticalStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
         verticalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
+
         view.addSubview(backToRegisterButton)
         backToRegisterButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
     }

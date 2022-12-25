@@ -13,10 +13,10 @@ class Bindable<T> {
             observer?(value)
         }
     }
-    
-    var observer: ((T?)->())?
-    
-    func bind(observer: @escaping (T?) ->()) {
+
+    var observer: ((T?) -> Void)?
+
+    func bind(observer: @escaping (T?) -> Void) {
         self.observer = observer
     }
 }
