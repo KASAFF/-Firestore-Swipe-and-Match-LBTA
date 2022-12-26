@@ -10,7 +10,6 @@ import UIKit
 class SwipingPhotosController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var cardViewModel: CardViewModel! {
         didSet {
-            print(cardViewModel.attributedString)
             controllers = cardViewModel.imageUrls.map({ imageUrl -> UIViewController in
                 let photoController = PhotoController(imageUrl: imageUrl)
                 photoController.imageView.clipsToBounds = true

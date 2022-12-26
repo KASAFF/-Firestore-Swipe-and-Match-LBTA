@@ -11,13 +11,14 @@
 		AB565DDF2957073A002668CA /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB565DDE2957073A002668CA /* SettingsCell.swift */; };
 		AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE832954F46B00D6BE86 /* RegistrationController.swift */; };
 		AB64BE862954FAD600D6BE86 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64BE852954FAD600D6BE86 /* CustomTextField.swift */; };
+		AB66CC94295A434100CC570C /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66CC93295A434100CC570C /* ChatLogController.swift */; };
+		AB66CC97295A4A6600CC570C /* MessagesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66CC96295A4A6600CC570C /* MessagesNavBar.swift */; };
 		AB68CC962953236800AE188B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC952953236800AE188B /* AppDelegate.swift */; };
 		AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC972953236800AE188B /* SceneDelegate.swift */; };
 		AB68CC9A2953236800AE188B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CC992953236800AE188B /* HomeController.swift */; };
 		AB68CC9D2953236800AE188B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB68CC9B2953236800AE188B /* Main.storyboard */; };
 		AB68CC9F2953236900AE188B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB68CC9E2953236900AE188B /* Assets.xcassets */; };
 		AB68CCA22953236900AE188B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB68CCA02953236900AE188B /* LaunchScreen.storyboard */; };
-		AB68CCAC2953260B00AE188B /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCAB2953260B00AE188B /* Extensions+UIView.swift */; };
 		AB68CCAF29532ED200AE188B /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCAE29532ED200AE188B /* HomeBottomControlsStackView.swift */; };
 		AB68CCB12953334400AE188B /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB02953334400AE188B /* TopNavigationStackView.swift */; };
 		AB68CCB329533B2D00AE188B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB229533B2D00AE188B /* CardView.swift */; };
@@ -27,6 +28,8 @@
 		AB6D049429599A4100949225 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D049329599A4100949225 /* MatchView.swift */; };
 		AB6D04962959B00500949225 /* SendMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D04952959B00500949225 /* SendMessageButton.swift */; };
 		AB6D04982959B37200949225 /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D04972959B37200949225 /* KeepSwipingButton.swift */; };
+		AB6D049B2959DE8F00949225 /* MatchesMessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D049A2959DE8F00949225 /* MatchesMessagesController.swift */; };
+		AB6D049D2959EBE100949225 /* MatchesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D049C2959EBE100949225 /* MatchesNavBar.swift */; };
 		AB8E70022955E38B0052BEA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */; };
 		ABC1E9EE295735E4009CCEE2 /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */; };
 		ABC1E9F029575ABE009CCEE2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */; };
@@ -46,6 +49,8 @@
 		AB565DDE2957073A002668CA /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		AB64BE832954F46B00D6BE86 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AB64BE852954FAD600D6BE86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		AB66CC93295A434100CC570C /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		AB66CC96295A4A6600CC570C /* MessagesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesNavBar.swift; sourceTree = "<group>"; };
 		AB68CC922953236800AE188B /* TinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB68CC952953236800AE188B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB68CC972953236800AE188B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +59,6 @@
 		AB68CC9E2953236900AE188B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB68CCA12953236900AE188B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB68CCA32953236900AE188B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB68CCAB2953260B00AE188B /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		AB68CCAE29532ED200AE188B /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
 		AB68CCB02953334400AE188B /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		AB68CCB229533B2D00AE188B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		AB6D049329599A4100949225 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		AB6D04952959B00500949225 /* SendMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButton.swift; sourceTree = "<group>"; };
 		AB6D04972959B37200949225 /* KeepSwipingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
+		AB6D049A2959DE8F00949225 /* MatchesMessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesMessagesController.swift; sourceTree = "<group>"; };
+		AB6D049C2959EBE100949225 /* MatchesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNavBar.swift; sourceTree = "<group>"; };
 		AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
 		ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
@@ -97,6 +103,14 @@
 				8A3E9108A5D38A6C1F4F8EDE /* Pods-TinderApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB66CC95295A4A4A00CC570C /* MatchesMessages */ = {
+			isa = PBXGroup;
+			children = (
+				AB66CC96295A4A6600CC570C /* MessagesNavBar.swift */,
+			);
+			path = MatchesMessages;
 			sourceTree = "<group>";
 		};
 		AB68CC892953236800AE188B = {
@@ -139,7 +153,6 @@
 		AB68CCAA2953260B00AE188B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AB68CCAB2953260B00AE188B /* Extensions+UIView.swift */,
 				ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */,
 			);
 			path = Extensions;
@@ -148,6 +161,7 @@
 		AB68CCAD29532EA800AE188B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB66CC95295A4A4A00CC570C /* MatchesMessages */,
 				AB68CCB02953334400AE188B /* TopNavigationStackView.swift */,
 				AB68CCAE29532ED200AE188B /* HomeBottomControlsStackView.swift */,
 				AB68CCB229533B2D00AE188B /* CardView.swift */,
@@ -157,6 +171,7 @@
 				AB6D049329599A4100949225 /* MatchView.swift */,
 				AB6D04952959B00500949225 /* SendMessageButton.swift */,
 				AB6D04972959B37200949225 /* KeepSwipingButton.swift */,
+				AB6D049C2959EBE100949225 /* MatchesNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +188,7 @@
 		AB68CCB72953671600AE188B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB6D04992959DE7D00949225 /* MatchesMessages */,
 				ABC1E9F6295799D9009CCEE2 /* User Details */,
 				ABC1E9F129578241009CCEE2 /* Login */,
 				AB68CC992953236800AE188B /* HomeController.swift */,
@@ -190,6 +206,15 @@
 				AB68CCB9295367BB00AE188B /* CardViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AB6D04992959DE7D00949225 /* MatchesMessages */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D049A2959DE8F00949225 /* MatchesMessagesController.swift */,
+				AB66CC93295A434100CC570C /* ChatLogController.swift */,
+			);
+			path = MatchesMessages;
 			sourceTree = "<group>";
 		};
 		ABC1E9F129578241009CCEE2 /* Login */ = {
@@ -226,8 +251,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB68CCA62953236900AE188B /* Build configuration list for PBXNativeTarget "TinderApp" */;
 			buildPhases = (
-				AB3B08EE29584E8D00E6B051 /* ShellScript */,
 				1DFDE622A85D09C7F931C5F7 /* [CP] Check Pods Manifest.lock */,
+				AB3B08EE29584E8D00E6B051 /* ShellScript */,
 				AB68CC8E2953236800AE188B /* Sources */,
 				AB68CC8F2953236800AE188B /* Frameworks */,
 				AB68CC902953236800AE188B /* Resources */,
@@ -331,8 +356,7 @@
 		};
 		AB3B08EE29584E8D00E6B051 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -368,18 +392,21 @@
 				AB6D049429599A4100949225 /* MatchView.swift in Sources */,
 				ABC1E9F5295782A7009CCEE2 /* LoginViewModel.swift in Sources */,
 				AB68CCAF29532ED200AE188B /* HomeBottomControlsStackView.swift in Sources */,
+				AB6D049D2959EBE100949225 /* MatchesNavBar.swift in Sources */,
 				AB68CCB629535D9700AE188B /* User.swift in Sources */,
 				AB64BE842954F46B00D6BE86 /* RegistrationController.swift in Sources */,
 				AB68CCB12953334400AE188B /* TopNavigationStackView.swift in Sources */,
 				ABE24B122955F64C0079D7CC /* Bindable.swift in Sources */,
 				AB64BE862954FAD600D6BE86 /* CustomTextField.swift in Sources */,
 				ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */,
-				AB68CCAC2953260B00AE188B /* Extensions+UIView.swift in Sources */,
 				AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */,
 				AB6D04982959B37200949225 /* KeepSwipingButton.swift in Sources */,
 				AB565DDF2957073A002668CA /* SettingsCell.swift in Sources */,
+				AB66CC94295A434100CC570C /* ChatLogController.swift in Sources */,
 				ABDA6C19295879EA00B8F1C8 /* SwipingPhotosController.swift in Sources */,
 				AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */,
+				AB66CC97295A4A6600CC570C /* MessagesNavBar.swift in Sources */,
+				AB6D049B2959DE8F00949225 /* MatchesMessagesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +564,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +595,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -134,8 +134,8 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         }
     }
 
-    lazy var header: UITableViewHeaderFooterView = {
-        let header = UITableViewHeaderFooterView()
+    lazy var header: UIView = {
+        let header = UIView()
         header.addSubview(image1Button)
         let padding: CGFloat = 16
         image1Button.anchor(top: header.topAnchor, leading: header.leadingAnchor, bottom: header.bottomAnchor, trailing: nil, padding: .init(top: padding, left: padding, bottom: padding, right: 0))
@@ -267,10 +267,6 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         return cell
     }
 
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
-//            cell.textView.becomeFirstResponder()
-//    }
 
     @objc fileprivate func handleNameChange(textField: UITextField) {
         textField.becomeFirstResponder()
