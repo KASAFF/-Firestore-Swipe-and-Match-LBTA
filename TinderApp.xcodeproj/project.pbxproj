@@ -24,6 +24,9 @@
 		AB68CCB629535D9700AE188B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB529535D9700AE188B /* User.swift */; };
 		AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCB9295367BB00AE188B /* CardViewModel.swift */; };
 		AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68CCBB2953716500AE188B /* Advertiser.swift */; };
+		AB6D049429599A4100949225 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D049329599A4100949225 /* MatchView.swift */; };
+		AB6D04962959B00500949225 /* SendMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D04952959B00500949225 /* SendMessageButton.swift */; };
+		AB6D04982959B37200949225 /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D04972959B37200949225 /* KeepSwipingButton.swift */; };
 		AB8E70022955E38B0052BEA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */; };
 		ABC1E9EE295735E4009CCEE2 /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */; };
 		ABC1E9F029575ABE009CCEE2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */; };
@@ -58,6 +61,9 @@
 		AB68CCB529535D9700AE188B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB68CCB9295367BB00AE188B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		AB68CCBB2953716500AE188B /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		AB6D049329599A4100949225 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		AB6D04952959B00500949225 /* SendMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButton.swift; sourceTree = "<group>"; };
+		AB6D04972959B37200949225 /* KeepSwipingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
 		AB8E70012955E38B0052BEA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
 		ABC1E9EF29575ABE009CCEE2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				AB64BE852954FAD600D6BE86 /* CustomTextField.swift */,
 				AB565DDE2957073A002668CA /* SettingsCell.swift */,
 				ABC1E9ED295735E4009CCEE2 /* AgeRangeCell.swift */,
+				AB6D049329599A4100949225 /* MatchView.swift */,
+				AB6D04952959B00500949225 /* SendMessageButton.swift */,
+				AB6D04972959B37200949225 /* KeepSwipingButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,12 +358,14 @@
 				ABDA6C1C2958A33D00B8F1C8 /* PhotoController.swift in Sources */,
 				ABC1E9F029575ABE009CCEE2 /* Firebase+Utils.swift in Sources */,
 				ABE24B14295664540079D7CC /* SettingsController.swift in Sources */,
+				AB6D04962959B00500949225 /* SendMessageButton.swift in Sources */,
 				AB68CCBC2953716500AE188B /* Advertiser.swift in Sources */,
 				AB68CCB329533B2D00AE188B /* CardView.swift in Sources */,
 				AB68CC9A2953236800AE188B /* HomeController.swift in Sources */,
 				AB68CC962953236800AE188B /* AppDelegate.swift in Sources */,
 				ABC1E9F829579A08009CCEE2 /* UserDetailsController.swift in Sources */,
 				ABC1E9EE295735E4009CCEE2 /* AgeRangeCell.swift in Sources */,
+				AB6D049429599A4100949225 /* MatchView.swift in Sources */,
 				ABC1E9F5295782A7009CCEE2 /* LoginViewModel.swift in Sources */,
 				AB68CCAF29532ED200AE188B /* HomeBottomControlsStackView.swift in Sources */,
 				AB68CCB629535D9700AE188B /* User.swift in Sources */,
@@ -365,6 +376,7 @@
 				ABF93A002955CA4E009D8BED /* RegistrationViewModel.swift in Sources */,
 				AB68CCAC2953260B00AE188B /* Extensions+UIView.swift in Sources */,
 				AB68CC982953236800AE188B /* SceneDelegate.swift in Sources */,
+				AB6D04982959B37200949225 /* KeepSwipingButton.swift in Sources */,
 				AB565DDF2957073A002668CA /* SettingsCell.swift in Sources */,
 				ABDA6C19295879EA00B8F1C8 /* SwipingPhotosController.swift in Sources */,
 				AB68CCBA295367BB00AE188B /* CardViewModel.swift in Sources */,
@@ -525,6 +537,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,6 +568,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

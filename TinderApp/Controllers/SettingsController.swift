@@ -97,6 +97,7 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView.tableFooterView = UIView()
         tableView.keyboardDismissMode = .interactive
+
         fetchCurrentUser()
 
     }
@@ -133,12 +134,13 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         }
     }
 
-    lazy var header: UIView = {
-        let header = UIView()
+    lazy var header: UITableViewHeaderFooterView = {
+        let header = UITableViewHeaderFooterView()
         header.addSubview(image1Button)
         let padding: CGFloat = 16
         image1Button.anchor(top: header.topAnchor, leading: header.leadingAnchor, bottom: header.bottomAnchor, trailing: nil, padding: .init(top: padding, left: padding, bottom: padding, right: 0))
         image1Button.widthAnchor.constraint(equalTo: header.widthAnchor, multiplier: 0.45).isActive = true
+
         let stackView = UIStackView(arrangedSubviews: [image2Button, image3Button])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -181,9 +183,9 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 270
+            return 300
         } else {
-            return 20
+            return 40
         }
     }
 
@@ -194,6 +196,8 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? 0 : 1 // if section 0 return 0
     }
+
+
 
     @objc fileprivate func handleMinAgeChange(slider: UISlider) {
         // i want to update the minLabel in my AgeRangeCell
@@ -263,13 +267,21 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         return cell
     }
 
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
+//            cell.textView.becomeFirstResponder()
+//    }
+
     @objc fileprivate func handleNameChange(textField: UITextField) {
+        textField.becomeFirstResponder()
         self.user?.name = textField.text
     }
     @objc fileprivate func handleProfessionChange(textField: UITextField) {
+        textField.becomeFirstResponder()
         self.user?.profession = textField.text
     }
     @objc fileprivate func handleAgeChange(textField: UITextField) {
+        textField.becomeFirstResponder()
         self.user?.age = Int(textField.text ?? "")
     }
 
@@ -293,17 +305,23 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
 
     @objc fileprivate func handleSave() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let docData: [String: Any] = [
+        var docData: [String: Any] = [
             "uid": uid,
             "fullName": user?.name ?? "",
             "imageUrl1": user?.imageUrl1 ?? "",
-            "imageUrl2": user?.imageUrl2 ?? "",
-            "imageUrl3": user?.imageUrl3 ?? "",
             "age": user?.age ?? -1,
             "profession": user?.profession ?? "",
             "minSeekingAge": user?.minSeekingAge ?? -1,
             "maxSeekingAge": user?.maxSeekingAge ?? -1
         ]
+
+        if user?.imageUrl2 != nil {
+            docData["imageUrl2"] = user!.imageUrl2
+        }
+        if user?.imageUrl3 != nil {
+            docData["imageUrl3"] = user!.imageUrl3
+        }
+
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Saving settings"
         hud.show(in: view)

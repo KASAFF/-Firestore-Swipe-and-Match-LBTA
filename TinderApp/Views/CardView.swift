@@ -11,7 +11,7 @@ import SDWebImage
 protocol CardViewDelegate: AnyObject {
     func didTapMoreInfo(cardViewModel: CardViewModel)
     func didRemoveCard(cardView: CardView)
-    
+
 }
 
 class CardView: UIView {
@@ -134,7 +134,7 @@ class CardView: UIView {
 
         if shouldDismissCard {
 
-            //hack solution
+            // hack solution
             guard let homeController = self.delegate as? HomeController else { return }
 
             if translationDirection == 1 {

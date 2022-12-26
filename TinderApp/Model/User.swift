@@ -17,8 +17,8 @@ struct User: ProducesCardViewModel {
     var imageUrl3: String?
     var uid: String?
 
-    var minSeekingAge: Int? = 18
-    var maxSeekingAge: Int? = 100
+    var minSeekingAge: Int?
+    var maxSeekingAge: Int?
 
     init(dictionary: [String: Any]) {
         // we'll initialize our user here
